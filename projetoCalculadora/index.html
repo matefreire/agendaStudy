@@ -6,6 +6,92 @@
       <title>Calculadora em JS</title>
   </head>
   <body>
-      <h2>Crie aqui a calculadora</h2>
+    
+    <label for="operacao">Operação</label>
+    <select name="operacao" id="operacao">
+      <option value="adicao">Adição</option>
+      <option value="subtracao">Subtração</option>
+      <option value="multiplicacao">Multiplicação</option>
+      <option value="divisao">Divisão</option>
+    </select>
+
+    <label for="primeiroOperador">Primeiro Operador</label>
+    <input type="number" name="Primeiro Operador" id="primeiroOperador">
+    <label for="segundoOperador">Segundo Operador</label>
+    <input type="number" name="Segundo Operador" id="segundoOperador">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+
+      function soma(a,b){
+
+        return a+b;
+
+      }
+
+
+function subtrai(a,b){
+
+ return a-b;
+
+}
+
+
+function multiplica(a,b){
+
+ return a*b;
+
+}
+
+
+
+
+function divide(a,b){
+
+ return a/b;
+
+}
+
+
+
+function calcular(){
+  let operador = document.getElementById("operacao").value;
+  let primeiroParametro = Number(document.getElementById("primeiroOperador").value);
+  let segundoParametro = Number(document.getElementById("segundoOperador").value);
+
+
+  if (primeiroParametro && segundoParametro)
+    switch(operador){
+
+      case "adicao":
+
+        alert( "Resultado: " + soma(primeiroParametro,segundoParametro));
+
+        break;
+
+      case "subtracao":
+
+        alert( "Resultado: " + subtrai(primeiroParametro,segundoParametro));
+
+        break;
+
+      case "multiplicacao":
+
+        alert( "Resultado: " + multiplica(primeiroParametro,segundoParametro));
+
+        break;
+
+      case "divisao":
+
+        alert( "Resultado: " + divide(primeiroParametro,segundoParametro));
+
+        break;
+
+      default:
+        alert("ERRO! Operação não identificada!");
+    }
+  else alert("Os operadores são obrigatórios!")      
+}
+    </script>
   </body>
 </html>
